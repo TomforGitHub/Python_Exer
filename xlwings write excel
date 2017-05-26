@@ -4,7 +4,12 @@ app = xw.App(visible=False)
 book = xw.Book('try.xlsx')
 sht = book.sheets[0]
 
+# write
 sht.range('D1').options(transpose=True).value = [[4,5,6,'awesome',5646],[8,9,0,89,'go']]
+#write
+text = sht.range('D1:D5').value
+print(text)
+
 book.save()
 book.close()
 app.kill()
